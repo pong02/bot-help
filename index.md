@@ -33,6 +33,7 @@ Welcome to the **Envelope and Stamp Inventory Bot**! This bot helps you manage y
     ```
 - **Response:**  
     A list of group names the bot is part of, formatted like:
+  
     ```
     1. Group Name 1
     2. Group Name 2
@@ -66,10 +67,13 @@ Welcome to the **Envelope and Stamp Inventory Bot**! This bot helps you manage y
     ```
 - **Response:**  
     A list of all registered group names, such as:
+  
     ```
     Registered Groups:
     - Group Name 1
     - Group Name 3
+    
+    
     ```
 
 ---
