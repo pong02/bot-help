@@ -122,6 +122,24 @@ Welcome to the **Envelope and Stamp Inventory Bot**! This bot helps you manage y
 
 ---
 
+#### **`/inventory`**
+- **Description:** Shows the current inventory.
+
+- **Response:**  
+    The bot will show the envelope and stamp remaining like:
+    ```
+    Inventory:
+    EnvelopeType1: 33
+    EnvelopeType2: 92
+    EnvelopeType3: 27
+    EnvelopeType4: 0
+
+    Stamp:
+    StampTypeA: 93
+    ```
+---
+
+
 ### **Usage Tracking**
 
 #### **`/estimated-usage`**
