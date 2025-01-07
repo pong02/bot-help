@@ -1,6 +1,6 @@
-# Envelope and Stamp Inventory Bot
+# AA Personal Assistant
 
-Welcome to the **Envelope and Stamp Inventory Bot**! This bot helps you manage your inventory of envelopes and stamps, track usage, and register groups for automated updates. Below you'll find detailed instructions for how to interact with the bot.
+Welcome to the **AA Personal Assistant Bot**! This bot helps you manage your inventory of envelopes and stamps, track usage, and register groups for automated updates. Below you'll find detailed instructions for how to interact with the bot.
 
 ## Features
 - Manage envelope and stamp inventories with ease.
@@ -12,7 +12,7 @@ Welcome to the **Envelope and Stamp Inventory Bot**! This bot helps you manage y
 
 ## Commands
 
-### **General Commands**
+### **Meta Commands**
 
 #### **`/ping`**
 - **Description:** Checks if the bot is active and responsive.
@@ -39,9 +39,7 @@ Welcome to the **Envelope and Stamp Inventory Bot**! This bot helps you manage y
     2. Group Name 2
     3. Group Name 3
     ```
-
-### **Group Management**
-
+    
 #### **`/register <group_numbers>`**
 - **Description:** Registers specific groups for bot interaction. You must replace `<group_numbers>` with a comma-separated list of group numbers from the `/list-groups` command. Only registered groups can interact with the bot for restricted commands.
 - **Input:**  
