@@ -139,6 +139,77 @@ Welcome to the **Envelope and Stamp Inventory Bot**! This bot helps you manage y
     ```
 ---
 
+#### **`/add-prices`**
+- **Description:** Adds a new price entry. You must provide the stamp/envelope type and UNIT price in the format: `<item>: <price>`. If an item doesn't exist, it will be created.
+- **Input:**  
+    Example:
+    ```
+    /add-prices
+    ExistingStampTypeA: 0.50
+    NewStampTypeB: 0.30
+    ExistingEnvelopeA: 0.31
+    ExistingEnvelopeB: 9.94
+    ```
+    This will add a new item `NewStampTypeB` and update `StampTypeA`, `EnvelopeA`, `EnvelopeB` to the price json.
+
+- **Response:**  
+    The bot will confirm the additions like:
+    ```
+    Price Updates:
+    Parcel-ExLarge: Updated to 0.5
+    Small: Added new price for Small at 0.45
+    ```
+
+---
+
+#### **`/buy`**
+- **Description:** Calculates the total price for purchasing. You must provide the item and quantity in the format: `<item>: <quantity>`. If an item doesn't exist, it will be ignored.
+- **Input:**  
+    Example:
+    ```
+    /buy
+    TMP-C5: 38
+    Express: 44
+    TMP-Large: 38
+    FakeEnvelope: 98
+    Satchel: 6
+    Parcel-Medium: 3
+    ```
+    This will add 200 of `StampTypeA` and 150 of `StampTypeB` to the stamp inventory.
+
+- **Response:**  
+    The bot will calculate the price like:
+    ```
+    Purchase Summary:
+    TMP-C5: 38 * 5.7 = 216.60
+    Express: 44 * 8 = 352.00
+    TMP-Large: 38 * 7.3 = 277.40
+    FakeEnvelope: Not found
+    Satchel: 6 * 9.41 = 56.46
+    Parcel-Medium: 3 * 0.21 = 0.63
+    Total: 903.09
+    ```
+
+---
+
+#### **`/prices`**
+- **Description:** Shows the current price list.
+
+- **Response:**  
+    The bot will show the envelope and stamp prices like:
+    ```
+    150c: 1.50
+    TMP-Small: 5
+    TMP-C5: 6
+    TMP-Large: 8
+    Express: 9
+    Satchel: 10
+    Parcel-Medium: 2
+    Parcel-ExLarge: 3.5
+    Small: 0.8
+    ```
+---
+
 
 ### **Usage Tracking**
 
