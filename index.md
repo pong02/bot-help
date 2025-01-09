@@ -269,7 +269,7 @@ Welcome to the **AA Personal Assistant Bot**! This bot helps you manage your inv
     Confidence: 60.87%
     ```
     
-    -No reference:
+    - No reference:
     ```
     No reference data available. Please upload reference data.
     Read label:
