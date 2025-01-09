@@ -236,6 +236,60 @@ Welcome to the **AA Personal Assistant Bot**! This bot helps you manage your inv
 
 ---
 
+### **Automated Label Matching**
+
+#### **`/ocr-reference`**
+- **Description:** Allows the upload of a single label information csv to match since the label printing is NOT always reliable. This ensures that the OCR result will only output what we printed. This is optional, so if this command is not run, OCR will still work as usual, just with 0% confidence at all times due to missing reference.
+- **Input:**  
+    Example:
+    ```
+    /ocr-reference
+    ```
+    This command will make the bot prompt for a CSV file. Please make sure the subsequent message is a `.csv`. If it is rejected, redo the command. Also please make sure there is NO caption under the file when uploading it to the bot. 
+
+#### **`/ocr-start`**
+- **Description:** This command will instruct the bot to start listening to images. Otherwise it will ignore. Each successful image upload will have OCR done, and immediately returned in the bot response. If matched with reference, it will return the label ROW in the reference excel while appending the matched row to the result csv, else, it will return whatever it read from the label for manual intervention. This is all in accordance to the CONFIDENCE output by the matching algorithm (as of time of writing, 75% confidence is automatically entered into result csv)
+- **Input:**  
+    Example:
+    Once OCR has started and an image is detected...
+
+- **Response:**  
+    The bot will display a detailed response like:
+    - Met threshold
+    ```
+    Matched Row:
+    23-12534-78169, Mark Wright, 9 Wright Av., Sheraton, VIC, 3630, [SP]/[C5] Z3-06-09 x1, 1
+    Confidence: 84.93%
+    ```
+    
+    - Failed to meet threshold:
+    ```
+    Matched Row with Low Confidence value, Review required:
+    C-123817-A, John Cena, Deep Sea Ave., Bilgewater, FIS, 8312, [NG]/[C4] A1-10-12 x4, 1
+    Confidence: 60.87%
+    ```
+    
+    -No reference:
+    ```
+    No reference data available. Please upload reference data.
+    Read label:
+    george washington
+    3200 Mount Vernon Memorial Highway, Mount Vernon, Virginia, 22121
+    [SP]/[TMP-C5] D0-02-07 *1
+    Confidence: 0%
+    ```
+
+#### **`/ocr-end`**
+- **Description:** Collects all the recognized labels that are ABOVE threshold into a single csv for ease of moving into sheets, and stops the bot from listening to images.
+- **Input:**  
+    Example:
+    ```
+    /ocr-end
+    ```
+    The bot will send the final collected `ocr_results.csv` and end listening to images. 
+
+---
+
 ## How It Works
 1. **Inventory Setup:**  
    Use `/add-envelopes` and `/add-stamps` to populate your inventory with envelope types and stamp types.
@@ -258,4 +312,4 @@ Welcome to the **AA Personal Assistant Bot**! This bot helps you manage your inv
 
 For any issues or feedback, contact the bot administrator.
 
-Happy managing!
+Happy Grinding!
