@@ -1,12 +1,40 @@
 # AA Personal Assistant
 
-Welcome to the **AA Personal Assistant Bot**! This bot helps you manage your inventory of envelopes and stamps, track usage, and register groups for automated updates. Below you'll find detailed instructions for how to interact with the bot.
+Welcome to the **AA Personal Assistant Bot**! Waltuh helps you manage your inventory of envelopes and stamps, track usage, and register groups for automated updates. Below you'll find detailed instructions for how to interact with the bot.
+
+## Table of Contents
+- [Features](#features)
+- [Meta Commands](#meta-commands)
+  - [`/ping`](#ping)
+  - [`/list-groups`](#list-groups)
+  - [`/register <group_numbers>`](#register-group_numbers)
+  - [`/ocr-register <group_numbers>`](#ocr-register-group_numbers)
+  - [`/list-registered`](#list-registered)
+  - [`/deregister <group_numbers>`](#deregister-group_numbers)
+  - [`/ocr-list`](#ocr-list)
+  - [`/ocr-deregister <group_numbers>`](#ocr-deregister-group_numbers)
+- [Inventory Management](#inventory-management)
+  - [`/add-envelopes`](#add-envelopes)
+  - [`/add-stamps`](#add-stamps)
+  - [`/inventory`](#inventory)
+  - [`/add-prices`](#add-prices)
+  - [`/buy`](#buy)
+  - [`/prices`](#prices)
+- [Usage Tracking](#usage-tracking)
+  - [`/estimated-usage`](#estimated-usage)
+- [Automated Label Matching](#automated-label-matching)
+  - [`/ocr-reference`](#ocr-reference)
+  - [`/ocr-start`](#ocr-start)
+  - [`/ocr-end`](#ocr-end)
+- [How It Works](#how-it-works)
+- [Notes](#notes)
 
 ## Features
 - Manage envelope and stamp inventories with ease.
 - Track usage of envelopes and stamps for different tasks.
 - Register groups to control bot interactions.
 - View and update inventory in real time.
+- Use OCR to manage unfulfillable orders
 
 ---
 
@@ -55,6 +83,23 @@ Welcome to the **AA Personal Assistant Bot**! This bot helps you manage your inv
     Registered Groups:
     - Group Name 1
     - Group Name 3
+    ```   
+
+#### **`/ocr-register <group_numbers>`**
+- **Description:** Registers specific groups for bot *OCR* interaction. You must replace `<group_numbers>` with a comma-separated list of group numbers from the `/list-groups` command. Only OCR registered groups can use send images to the bot for OCR.
+- **Input:**  
+    Example:
+    ```
+    /ocr-register 1, 3
+    ```
+    This will register Group 1 and Group 3 for interaction with the bot.
+
+- **Response:**  
+    The bot will send a message like:
+    ```
+    Registered Groups:
+    - Group Name 1
+    - Group Name 3
     ```
 
 #### **`/list-registered`**
@@ -70,10 +115,41 @@ Welcome to the **AA Personal Assistant Bot**! This bot helps you manage your inv
     Registered Groups:
     - Group Name 1
     - Group Name 3
-    
-    
     ```
-
+    
+#### **`/deregister <group_numbers>`**
+- **Description:** Deregisters specific groups for bot interaction. You must replace `<group_numbers>` with a comma-separated list of group numbers from the `/list-registered` command. Deregistered groups can no longer interact with the bot for restricted commands.
+- **Input:**  
+    Example:
+    ```
+    /deregister 1, 3
+    ```
+    This will deregister Group 1 and Group 3 for interaction with the bot.
+    
+#### **`/ocr-list`**
+- **Description:** Lists all the groups that have been registered for bot *OCR* interaction.
+- **Input:**  
+    ```
+    /ocr-list
+    ```
+- **Response:**  
+    A list of all OCR registered group names, such as:
+  
+    ```
+    Registered Groups:
+    - Group Name 1
+    - Group Name 3
+    ```
+    
+#### **`/ocr-deregister <group_numbers>`**
+- **Description:** Deregisters specific groups for bot *OCR* interaction. You must replace `<group_numbers>` with a comma-separated list of group numbers from the `/ocr-list` command. Deregistered groups can no longer use the bot's OCR capabilities.
+- **Input:**  
+    Example:
+    ```
+    /deregister 1, 3
+    ```
+    This will deregister Group 1 and Group 3 for image interaction with the bot.
+    
 ---
 
 ### **Inventory Management**
