@@ -384,7 +384,7 @@ Welcome to the **AA Personal Assistant Bot**! Waltuh helps you manage your inven
 ## Notes
 - The bot will only respond to commands from registered groups for commands like `/add-envelopes`, `/estimated-usage`, etc.
 - Ensure correct input formats, such as providing envelope types and quantities, to avoid errors.
-- You must register a group before it can use the bot for specific commands. Use `/list-groups` to get the list of groups and `/register` to enable a group.
+- You must register a group before it can use the bot for specific commands. Use `/list-groups` to get the list of groups and `/register` to enable a group. (p/s: you can send these commands to yourself because any unregistered group message will be ignored)
 
 For any issues or feedback, contact the bot administrator.
 
